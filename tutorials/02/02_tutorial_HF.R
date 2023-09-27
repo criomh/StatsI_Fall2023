@@ -6,6 +6,8 @@ getwd()
 
 # Set working directory 
 setwd("/Users/hannahfrank/StatsI_Fall2023_prep")
+## I found the folder in my laptop files, copied path, and then added \ to allow R to read the path
+setwd("C:\\Users\\criom\\Documents\\GitHub\\StatsI_Fall2023")
 getwd()
 
 # Agenda
@@ -53,14 +55,14 @@ hist(df$income,
      main="Monthly net income",
      xlab="Euro")
 
-plot(density(df$incom),
+plot(density(df$income),
      main="Monthly net income",
      xlab="Euro")
 
 # Which kind of inferences can we make with regards to the population,
 # based on the sample data?
 mean(df$income) # Sample mean is estimate for population mean
-sd(df$income)/sqrt(length(df$income)) 
+sd(df$income)/sqrt(length(df$income))
 # Standard **error** (Sample standard deviation adjusted by sample size)
 # is estimate for standard deviation of the sampling distribution
 
@@ -135,9 +137,9 @@ upper_99_t
 
 # Update Histogram 
 hist(df$income)
-abline(v=mean(df$income),col="black")
-abline(v=lower_95,col="black",lty="dashed")
-abline(v=upper_95,col="black",lty="dashed")
+abline(v=mean(df$income),col="blue")
+abline(v=lower_95,col="red",lty="dashed")
+abline(v=upper_95,col="green",lty="dashed")
 
 # Is there a relationship between education and income?
 
