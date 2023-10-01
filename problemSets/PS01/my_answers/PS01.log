@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9) (preloaded format=pdflatex 2023.9.24)  24 SEP 2023 21:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9) (preloaded format=pdflatex 2023.9.24)  1 OCT 2023 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -952,78 +952,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
 
  []
 
+[1
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+{C:/Users/criom/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (PS01.R)
+(PS01.R) (PS01.R) (PS01.R)
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-[1
+[2] (PS01.R) (t_test_result.tex) [3] (PS01.R) (PS01.R)
+<scatter_y_x1_x2_x3.png, id=53, 481.8pt x 481.8pt>
+File: scatter_y_x1_x2_x3.png Graphic file (type png)
+<use scatter_y_x1_x2_x3.png>
+Package pdftex.def Info: scatter_y_x1_x2_x3.png  used on input line 165.
+(pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
+ [4] (PS01.R) (PS01.R)
+<boxplot_Expenditure_by_Region.png, id=69, 481.8pt x 481.8pt>
+File: boxplot_Expenditure_by_Region.png Graphic file (type png)
+<use boxplot_Expenditure_by_Region.png>
+Package pdftex.def Info: boxplot_Expenditure_by_Region.png  used on input line 
+186.
+(pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
 
-{C:/Users/criom/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (PS01.R
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42 ...ulation parameter with probability 1 - α.
-                                                  " In other words, the CI i...
-
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "B1.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.42 ...ulation parameter with probability 1 - α.
-                                                  " In other words, the CI i...
-
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-[2]) (PS01.R
-
-! LaTeX Error: Invalid UTF-8 byte sequence (�\lst@FillFixed@).
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.103 # with α 
-                = 0.05.
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-
-! LaTeX Error: Invalid UTF-8 byte "B1.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.103 # with α 
-                = 0.05.
-The document does not appear to be in UTF-8 encoding.
-Try adding \UseRawInputEncoding as the first line of the file
-or specify an encoding such as \usepackage [latin1]{inputenc}
-in the document preamble.
-Alternatively, save the file in UTF-8 using your editor or another tool
-
-) [3] (PS01.R) [4] (PS01.aux)
+[5 <./scatter_y_x1_x2_x3.png>] (PS01.R)
+<expenditure_by_personal_income.png, id=86, 481.8pt x 481.8pt>
+File: expenditure_by_personal_income.png Graphic file (type png)
+<use expenditure_by_personal_income.png>
+Package pdftex.def Info: expenditure_by_personal_income.png  used on input line
+ 201.
+(pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
+ [6 <./boxplot_Expenditure_by_Region.png>] (PS01.R)
+<expenditure_by_personal_income_with_legend.png, id=101, 481.8pt x 481.8pt>
+File: expenditure_by_personal_income_with_legend.png Graphic file (type png)
+<use expenditure_by_personal_income_with_legend.png>
+Package pdftex.def Info: expenditure_by_personal_income_with_legend.png  used o
+n input line 211.
+(pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
+ [7 <./expenditure_by_personal_income.png>] [8 <./expenditure_by_personal_incom
+e_with_legend.png>] (PS01.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-08-29>
@@ -1032,10 +998,10 @@ Package rerunfilecheck Info: File `PS01.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27260 strings out of 475248
- 478036 string characters out of 5757813
- 2296785 words of memory out of 5000000
- 48211 multiletter control sequences out of 15000+600000
+ 27311 strings out of 475248
+ 479994 string characters out of 5757813
+ 2051785 words of memory out of 5000000
+ 48251 multiletter control sequences out of 15000+600000
  568855 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,6n,89p,3238b,2130s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1052,9 +1018,9 @@ m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
 rs/criom/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pf
 b><C:/Users/criom/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmtt12.pfb>
-Output written on PS01.pdf (4 pages, 147802 bytes).
+Output written on PS01.pdf (8 pages, 178648 bytes).
 PDF statistics:
- 182 PDF objects out of 1000 (max. 8388607)
- 87 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 196 PDF objects out of 1000 (max. 8388607)
+ 79 named destinations out of 1000 (max. 500000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
