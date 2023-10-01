@@ -122,9 +122,20 @@ A school counselor was curious about the average of IQ of the students in her sc
 	\vspace{.5cm}
 	
 	\lstinputlisting[language=R, firstline=79, lastline=80]{PS01.R}
-	
-	\input{t_test_result.tex}
-	
+		
+	\begin{verbatim}
+		One Sample T-Test
+		data: y
+		t     = -0.59574     df=24     p-value=0.7215
+		
+		alternative hypothesis:     true mean is greater than 100
+		
+		95 percent confidence interval:
+		93.95993     Inf
+		
+		sample estimates:
+		mean of x = 98.44
+	\end{verbatim}
 	
 	\noindent The result indicates that p is greater than 0.05, failing to reject the null hypothesis. In full, this means I cannot reject the null hypothesis that the counsellor's school's average IQ score is higher than the average IQ score for all schools.
 	

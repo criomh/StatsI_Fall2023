@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9) (preloaded format=pdflatex 2023.9.24)  1 OCT 2023 18:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.9) (preloaded format=pdflatex 2023.9.24)  1 OCT 2023 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -960,33 +960,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
-[2] (PS01.R) (t_test_result.tex) [3] (PS01.R) (PS01.R)
+[2] (PS01.R) [3] (PS01.R) (PS01.R)
 <scatter_y_x1_x2_x3.png, id=53, 481.8pt x 481.8pt>
 File: scatter_y_x1_x2_x3.png Graphic file (type png)
 <use scatter_y_x1_x2_x3.png>
-Package pdftex.def Info: scatter_y_x1_x2_x3.png  used on input line 165.
+Package pdftex.def Info: scatter_y_x1_x2_x3.png  used on input line 176.
 (pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
  [4] (PS01.R) (PS01.R)
 <boxplot_Expenditure_by_Region.png, id=69, 481.8pt x 481.8pt>
 File: boxplot_Expenditure_by_Region.png Graphic file (type png)
 <use boxplot_Expenditure_by_Region.png>
 Package pdftex.def Info: boxplot_Expenditure_by_Region.png  used on input line 
-186.
+197.
 (pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
-
-[5 <./scatter_y_x1_x2_x3.png>] (PS01.R)
+ [5 <./scatter_y_x1_x2_x3.png>] (PS01.R)
 <expenditure_by_personal_income.png, id=86, 481.8pt x 481.8pt>
 File: expenditure_by_personal_income.png Graphic file (type png)
 <use expenditure_by_personal_income.png>
 Package pdftex.def Info: expenditure_by_personal_income.png  used on input line
- 201.
+ 212.
 (pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
  [6 <./boxplot_Expenditure_by_Region.png>] (PS01.R)
 <expenditure_by_personal_income_with_legend.png, id=101, 481.8pt x 481.8pt>
 File: expenditure_by_personal_income_with_legend.png Graphic file (type png)
 <use expenditure_by_personal_income_with_legend.png>
 Package pdftex.def Info: expenditure_by_personal_income_with_legend.png  used o
-n input line 211.
+n input line 222.
 (pdftex.def)             Requested size: 234.8775pt x 234.87839pt.
  [7 <./expenditure_by_personal_income.png>] [8 <./expenditure_by_personal_incom
 e_with_legend.png>] (PS01.aux)
@@ -998,10 +997,10 @@ Package rerunfilecheck Info: File `PS01.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27311 strings out of 475248
- 479994 string characters out of 5757813
+ 27307 strings out of 475248
+ 479855 string characters out of 5757813
  2051785 words of memory out of 5000000
- 48251 multiletter control sequences out of 15000+600000
+ 48250 multiletter control sequences out of 15000+600000
  568855 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,6n,89p,3238b,2130s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1018,7 +1017,7 @@ m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Use
 rs/criom/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pf
 b><C:/Users/criom/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmtt12.pfb>
-Output written on PS01.pdf (8 pages, 178648 bytes).
+Output written on PS01.pdf (8 pages, 181661 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  79 named destinations out of 1000 (max. 500000)
