@@ -1,0 +1,232 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{graphicx,textcomp}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage[reqno]{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyvrb}
+\usepackage{amssymb,enumerate}
+\usepackage[all]{xy}
+\usepackage{endnotes}
+\usepackage{lscape}
+\newtheorem{com}{Comment}
+\usepackage{float}
+\usepackage{hyperref}
+\newtheorem{lem} {Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{cor}{Corollary}
+\newtheorem{obs}{Observation}
+\usepackage[compact]{titlesec}
+\usepackage{dcolumn}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{multirow}
+\usepackage{xcolor}
+\newcolumntype{.}{D{.}{.}{-1}}
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+\definecolor{light-gray}{gray}{0.65}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+\newcommand{\Sref}[1]{Section~\ref{#1}}
+\newtheorem{hyp}{Hypothesis}
+
+\title{Problem Set 2}
+\date{Due: October 15, 2023}
+\author{Applied Stats/Quant Methods 1}
+
+\begin{document}
+	\maketitle
+	\section*{Instructions}
+\begin{itemize}
+	\item Please show your work! You may lose points by simply writing in the answer. If the problem requires you to execute commands in \texttt{R}, please include the code you used to get your answers. Please also include the \texttt{.R} file that contains your code. If you are not sure if work needs to be shown for a particular problem, please ask.
+	\item Your homework should be submitted electronically on GitHub.
+	\item This problem set is due before 23:59 on Sunday October 15, 2023. No late assignments will be accepted.
+
+\end{itemize}
+
+	
+	\vspace{.5cm}
+	\section*{Question 1: Political Science}
+		\vspace{.25cm}
+	The following table was created using the data from a study run in a major Latin American city.\footnote{Fried, Lagunes, and Venkataramani (2010). ``Corruption and Inequality at the Crossroad: A Multimethod Study of Bribery and Discrimination in Latin America. \textit{Latin American Research Review}. 45 (1): 76-97.} As part of the experimental treatment in the study, one employee of the research team was chosen to make illegal left turns across traffic to draw the attention of the police officers on shift. Two employee drivers were upper class, two were lower class drivers, and the identity of the driver was randomly assigned per encounter. The researchers were interested in whether officers were more or less likely to solicit a bribe from drivers depending on their class (officers use phrases like, ``We can solve this the easy way'' to draw a bribe). The table below shows the resulting data.
+
+\newpage
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{l | c c c }
+		& Not Stopped & Bribe requested & Stopped/given warning \\
+		\\[-1.8ex] 
+		\hline \\[-1.8ex]
+		Upper class & 14 & 6 & 7 \\
+		Lower class & 7 & 7 & 1 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\begin{enumerate}
+	
+	\item [(a)]
+	Calculate the $\chi^2$ test statistic by hand/manually (even better if you can do "by hand" in \texttt{R}).\\
+	
+	\noindent In order to perform the $\chi^2$ test, I assume a) both variables are categorical, and b) both are nominal (i.e. not ranked, in contrast to ordinal which means ranked/ordered).
+	
+	\noindent The $\chi^2$ test compares the observed distribution of variable observations with the expected distribution IF the predictor variable has no relationship with the effect/outcome variable (i.e. the null hypothesis). A statistically significant difference gives evidence to reject the null hypothesis i.e. that the variables are independent.
+	
+	\noindent First, calculate the totals for observations (rows).
+	
+	\lstinputlisting[language=R, firstline=46, lastline=48]{PS02.R}
+	
+	\noindent Second,  calculate the totals for outcome variables (columns).
+	
+	\lstinputlisting[language=R, firstline=51, lastline=53]{PS02.R}
+	
+	\noindent Third, calculate expected observations.
+	
+	\lstinputlisting[language=R, firstline=56, lastline=63]{PS02.R}
+	
+	\noindent Fourth, calculate the sum of the squared differences over expected values to find the $\chi^2$ test. Note that for negative numbers, I had to swap the sqrt() function to avoid NaN warnings.
+	
+	\lstinputlisting[language=R, firstline=67, lastline=75]{PS02.R}
+	
+	\item [(b)]
+	Now calculate the p-value from the test statistic you just created (in \texttt{R}).\footnote{Remember frequency should be $>$ 5 for all cells, but let's calculate the p-value here anyway.}  What do you conclude if $\alpha = 0.1$?\\
+	
+	\noindent Calculate the degrees of freedom, which is the product of the number of rows (minus 1) and number of columns (minus 1). I choose the upper tail as it is a chi-squared hypothesis test.
+
+	\lstinputlisting[language=R, firstline=81, lastline=83]{PS02.R}
+	
+	\item [(c)] Calculate the standardized residuals for each cell and put them in the table below.
+	
+	\noindent The standarised residual is the difference between the observed and the expected counts, divided by the square root of expected count. Note I have rounded each value to 2 decimal places.
+	
+	\lstinputlisting[language=R, firstline=91, lastline=98]{PS02.R}
+	
+	\begin{table}[h]
+		\centering
+		\begin{tabular}{l | c c c }
+			& Not Stopped & Bribe requested & Stopped/given warning \\
+			\\[-1.8ex] 
+			\hline \\[-1.8ex]
+			Upper class  & 0.14 & -0.82 & 0.82 \\
+			\\
+			Lower class & -0.18 & 1.09 & -1.1  \\
+			
+		\end{tabular}
+	\end{table}
+	
+	\vspace{2cm}
+	\item [(d)] How might the standardized residuals help you interpret the results?  
+	
+	\noindent Standardised residuals measure the strength of the difference between observed and expected values. I note two details: the positive and negative values largely cancel each other out, and also each value is relatively small (less than $\pm$ 1.1).
+	
+	\noindent These both indicate that the differences are so minor that it would require a large n-size for such results to be statistically significant.
+	
+\end{enumerate}
+\newpage
+
+\section*{Question 2: Economics}
+Chattopadhyay and Duflo were interested in whether women promote different policies than men.\footnote{Chattopadhyay and Duflo. (2004). ``Women as Policy Makers: Evidence from a Randomized Policy Experiment in India. \textit{Econometrica}. 72 (5), 1409-1443.} Answering this question with observational data is pretty difficult due to potential confounding problems (e.g. the districts that choose female politicians are likely to systematically differ in other aspects too). Hence, they exploit a randomized policy experiment in India, where since the mid-1990s, $\frac{1}{3}$ of village council heads have been randomly reserved for women. A subset of the data from West Bengal can be found at the following link: \url{https://raw.githubusercontent.com/kosukeimai/qss/master/PREDICTION/women.csv}\\
+
+\noindent Each observation in the data set represents a village and there are two villages associated with one GP (i.e. a level of government is called "GP"). Figure~\ref{fig:women_desc} below shows the names and descriptions of the variables in the dataset. The authors hypothesize that female politicians are more likely to support policies female voters want. Researchers found that more women complain about the quality of drinking water than men. You need to estimate the effect of the reservation policy on the number of new or repaired drinking water facilities in the villages.
+\vspace{.5cm}
+\begin{figure}[h!]
+	\caption{\footnotesize{Names and description of variables from Chattopadhyay and Duflo (2004).}}
+	\vspace{.5cm}
+	\centering
+	\label{fig:women_desc}
+	\includegraphics[width=1.1\textwidth]{women_desc.png}
+\end{figure}		
+
+\newpage
+\begin{enumerate}
+	\item [(a)] State a null and alternative (two-tailed) hypothesis.
+	
+	\noindent $H_0$: The number of new or repaired drinking water facilities is identical in villages with a reservation policy and without a reservation policy: $water_1 = water_0$
+	
+	\noindent $H_a$: The number of new or repaired drinking water facilities is different in villages with a reservation policy and without a reservation policy: $water_1 \neq water_0$
+	
+	\vspace{1cm}
+	\item [(b)] Run a bivariate regression to test this hypothesis in \texttt{R} (include your code!).
+	
+	\noindent I extract the data.
+	
+	\lstinputlisting[language=R, firstline=118, lastline=118]{PS02.R}
+	
+	\noindent I create a linear regression model with the presence of a reservation policy (0 denotes no policy, 1 denotes  policy present)
+	
+	\lstinputlisting[language=R, firstline=121, lastline=122]{PS02.R}
+	
+	\noindent I then print this for input into LaTeX.
+	
+	\lstinputlisting[language=R, firstline=125, lastline=125]{PS02.R}
+	
+	\begin{table}[!htbp] \centering 
+		\caption{} 
+		\label{} 
+		\begin{tabular}{@{\extracolsep{5pt}}lc} 
+			\\[-1.8ex]\hline 
+			\hline \\[-1.8ex] 
+			& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+			\cline{2-2} 
+			\\[-1.8ex] & water \\ 
+			\hline \\[-1.8ex] 
+			reserved & 9.252$^{**}$ \\ 
+			& (3.948) \\ 
+			& \\ 
+			Constant & 14.738$^{***}$ \\ 
+			& (2.286) \\ 
+			& \\ 
+			\hline \\[-1.8ex] 
+			Observations & 322 \\ 
+			R$^{2}$ & 0.017 \\ 
+			Adjusted R$^{2}$ & 0.014 \\ 
+			Residual Std. Error & 33.446 (df = 320) \\ 
+			F Statistic & 5.493$^{**}$ (df = 1; 320) \\ 
+			\hline 
+			\hline \\[-1.8ex] 
+			\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+		\end{tabular} 
+	\end{table} 
+	
+	\vspace{6cm}
+	\item [(c)] Interpret the coefficient estimate for reservation policy. 
+	
+	\noindent The linear regression indicates an average increase of 9.252 drinking water facilities for villages which have a reservation policy compared to villages which don't.
+	
+	\noindent Further, \texttt{p < 0.05}, indicating this result is statistically significant.
+	
+	\noindent In other words, I have evidence to reject the null hypothesis (the number of new and repaired facilities in villages with and without a reservation policy is the same) and I have evidence supporting the alternative hypothesis (the number of facilities in villages with the reservation policy is different to the number in villages without the reservation policy).
+	
+\end{enumerate}
+
+\end{document}
