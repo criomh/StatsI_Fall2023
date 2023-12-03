@@ -103,7 +103,7 @@ model_final$fitted.values[458] # Predicted outcome
 df_na[263,c("euftf_re","eduyrs","hinctnta","trstplt","imwbcnt","gndr","agea","brncntr")]
 model_final$fitted.values[263] # Predicted outcome
 
-### Difference in betas ####
+ ### Difference in betas ####
 # Difference in coefficients when observation 
 # i is included and not included
 
